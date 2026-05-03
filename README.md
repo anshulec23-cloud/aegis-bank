@@ -12,10 +12,6 @@
 
 CyberRisk Intelligence Platform is an industrial cybersecurity application that detects attacks on operational technology environments and estimates the financial exposure a bank, insurer, or lender could face from the resulting downtime, penalties, and recovery costs. It is not an investment-risk tool for industrial companies; it is a cyber incident risk engine for infrastructure assets with a financial impact layer.
 
-## Overview
-
-CyberRisk is an intelligent platform that detects cyberattacks in Industrial Control Systems (ICS) and quantifies financial exposure in real-time. Originally developed for the Cognizant Technoverse Hackathon 2026, it has evolved into a production-ready system used by financial institutions to assess credit risk from operational technology security incidents.
-
 ## Sample Output
 
 Example agent output from the risk quantifier:
