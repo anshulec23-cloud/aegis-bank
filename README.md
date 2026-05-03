@@ -8,9 +8,32 @@
 >
 > Powered by 5-agent LangGraph orchestration, Random Forest ML, and structured financial modeling.
 
+## What Is This
+
+CyberRisk Intelligence Platform is an industrial cybersecurity application that detects attacks on operational technology environments and estimates the financial exposure a bank, insurer, or lender could face from the resulting downtime, penalties, and recovery costs. It is not an investment-risk tool for industrial companies; it is a cyber incident risk engine for infrastructure assets with a financial impact layer.
+
 ## Overview
 
 CyberRisk is an intelligent platform that detects cyberattacks in Industrial Control Systems (ICS) and quantifies financial exposure in real-time. Originally developed for the Cognizant Technoverse Hackathon 2026, it has evolved into a production-ready system used by financial institutions to assess credit risk from operational technology security incidents.
+
+## Sample Output
+
+Example agent output from the risk quantifier:
+
+```json
+{
+  "attack_type": "PhysicalTamper",
+  "severity": "critical",
+  "device_type": "oil_refinery",
+  "anomaly_score": 0.91,
+  "estimated_downtime_h": 24,
+  "downtime_cost_usd": 19200000,
+  "sla_penalty_usd": 2880000,
+  "regulatory_fine_usd": 1500000,
+  "total_exposure_usd": 23580000,
+  "credit_risk_flag": "CRITICAL"
+}
+```
 
 **Key Capabilities:**
 - Real-time anomaly detection via Random Forest ML
@@ -24,6 +47,13 @@ CyberRisk is an intelligent platform that detects cyberattacks in Industrial Con
 ---
 
 ## Architecture
+
+```mermaid
+flowchart LR
+  A[Attack Detection Engine] --> B[Financial Impact Quantifier]
+  B --> C[Regulatory Penalty Calculator]
+  C --> D[Risk Report Generator]
+```
 
 ### System Design
 
