@@ -45,10 +45,16 @@ Example agent output from the risk quantifier:
 ## Architecture
 
 ```mermaid
-flowchart LR
-  A[Attack Detection Engine] --> B[Financial Impact Quantifier]
-  B --> C[Regulatory Penalty Calculator]
-  C --> D[Risk Report Generator]
+flowchart TD
+    RawTelemetry[Raw Telemetry Log] --> DetectorNode["Agent 1: Detector<br>(Random Forest Anomaly Scorer)"]
+    DetectorNode -->|No Anomaly| NormalPath[Log & Display Normal State]
+    DetectorNode -->|Anomaly Detected| ClassifierNode["Agent 2: Classifier<br>(Threat Type & Severity Classifier)"]
+    ClassifierNode --> IsolatorNode["Agent 3: Isolator<br>(Network Isolation Decider)"]
+    IsolatorNode -->|Quarantine Command| MQTT[MQTT Broker Isolation Command]
+    ClassifierNode --> RiskQuantifierNode["Agent 4: Risk Quantifier<br>(Financial Blast Radius Calculator)"]
+    RiskQuantifierNode --> ReporterNode["Agent 5: Reporter<br>(NIST SP 800-61 Incident & Credit Risk Assessor)"]
+    ReporterNode --> DB[(PostgreSQL / SQLite Database)]
+    ReporterNode --> LiveDashboard[WebSocket Real-Time React HUD]
 ```
 
 ### System Design
@@ -561,8 +567,8 @@ MIT License — see [LICENSE](LICENSE) file
 
 ## Support & Community
 
-- **Issues**: [GitHub Issues](https://github.com/anshulec23-cloud/Bank-risk-assessment-application-/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/anshulec23-cloud/Bank-risk-assessment-application-/discussions)
+- **Issues**: [GitHub Issues](https://github.com/anshulec23-cloud/aegis-bank/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/anshulec23-cloud/aegis-bank/discussions)
 - **Documentation**: [API Docs](http://localhost:8000/api/docs)
 
 ---
@@ -576,7 +582,7 @@ If you use CyberRisk in research or production, please cite:
   title={CyberRisk Intelligence Platform: Real-time ICS Attack Detection with Financial Risk Quantification},
   author={Anshul EC},
   year={2025},
-  url={https://github.com/anshulec23-cloud/Bank-risk-assessment-application-}
+  url={https://github.com/anshulec23-cloud/aegis-bank}
 }
 ```
 
