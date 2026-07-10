@@ -41,7 +41,7 @@ def train():
     print(classification_report(y_test, y_pred, target_names=["Normal", "Attack"]))
 
     joblib.dump(clf, MODEL_PATH)
-    print(f"Model saved → {MODEL_PATH}")
+    print(f"Model saved -> {MODEL_PATH}")
     return clf
 
 

@@ -158,8 +158,8 @@ backend/
 
 ```bash
 # Clone repository
-git clone https://github.com/anshulec23-cloud/Bank-risk-assessment-application-.git
-cd cyberrisk-platform
+git clone https://github.com/anshulec23-cloud/aegis-bank.git
+cd aegis-bank
 
 # Backend setup
 cd backend
